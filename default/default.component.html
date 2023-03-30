@@ -1,0 +1,13 @@
+<div class="main_container">
+    <div class="navbar_style">
+        <app-navbar (toggleEvent)="toggleEventStatus = $event"></app-navbar>
+    </div>
+    <div class="content">
+        <div [ngClass]="toggleEventStatus == true?' side_nav_content1' : 'side_nav_content2' ">
+            <app-sidenav [toggleEventStatus]="toggleEventStatus"></app-sidenav>
+        </div>
+        <div [ngClass]="toggleEventStatus == true? 'router_content1' : 'router_content2' " >
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

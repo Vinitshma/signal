@@ -1,0 +1,51 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    padding: 17px 12px;
+    position: fixed;
+    background: var(--primary-color);
+    color:var(--white-color);
+    z-index: 2;
+}
+.navbar-brand{
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    cursor: pointer;
+    i{
+        padding: 6px;
+        border-radius: 4px;
+    }
+    i:hover{
+        background: var(--primary-light);
+        color: var(--black-color);
+    }
+    .logo_name{
+        padding-left: 6px;
+        display: flex;
+        a{
+            padding-top: 2px;
+        }
+    }
+}
+a{
+    color: var(--white-color) !important;
+}
+.dropdown .user_icon{
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+}
+.user_icon:hover{
+    background:var(--primary-light);
+    color: var(--black-color) !important;
+}
+.dropdown-menu{
+    --bs-dropdown-link-active-bg: var(--primary-color);
+    li{
+        cursor: pointer;
+    }
+}

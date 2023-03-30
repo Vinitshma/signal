@@ -1,0 +1,11 @@
+<div class="side_nav_main">
+    <div class="side_inner">
+        <ul>
+            <ng-container *ngFor="let navs of navigations">
+                <li routerLink="{{navs.url}}" routerLinkActive="active">
+                    <a><i class="{{navs.icon}}"></i> {{navs.name}}</a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-end mt-4">
+    <button class="btn btn-primary" (click)="modelShow()">Add template</button>
+</div>
+
+<div class="mt-5"></div>
+<div class="container-fluid">
+    <div class="accordion">
+        <div class="card">
+            <div class="card-header d-flex text-center" role="button" data-bs-toggle="collapse" href="#collapseOne" 
+            aria-expanded="false" aria-controls="collapseOne">
+                <p>Template Name</p>
+            </div>
+            <div id="collapseOne" class="collapse">
+                <div class="card-body row">
+                    <div class="template_cs col-md-4" *ngFor="let item of datas">
+                        <div>
+                            <span>{{item.userName}}</span>
+
+                            <div class="container-fluid" *ngFor="let item2 of item.usertemp">
+                                <span id="menu_{{item2.menuId}}">
+                                    <input type="checkbox" id="menu_{{item.Uid}}_{{item2.menuId}}" 
+                                    (change)="checkChangeAll($event, item.Uid, item2.menuId)"> 
+                                    <label for="">{{item2.menuName}}</label>
+                                </span>
+                                <ul>
+                                    <li *ngFor="let item3 of item2.templates">
+                                        <input type="checkbox" id="temp_in{{item2.menuId}}_{{item3.templateId}}"
+                                         (change)="checkChangeChild($event, item2.templates, item2.menuId, item3.templateId)" >
+                                        <label id="temp_lab{{item3.templateId}}">{{item3.tempName}}</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row d-flex justify-content-end mt-4">
+    <div class="">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="txtSearch">
+        </div>
+    </div>
+</div>
+<app-grids [searchTxt]="txtSearch"></app-grids>
+
+<ng-container *ngIf="openModelTemplate == true">
+    <app-models [openPopUp]="modelTemplate" (setOpenPopupToFalse)="statusOfClose=$event"></app-models>
+</ng-container>

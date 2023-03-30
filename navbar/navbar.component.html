@@ -1,0 +1,21 @@
+<nav class="container-fluid">
+    <div class="navbar-brand">
+        <span (click)="toggleSidebar()">
+            
+            <i *ngIf="menuStatus === true" class="fa fa-bars-staggered"></i>
+            <i *ngIf="menuStatus === false" class="fas fa-bars"></i>
+        </span>
+        <div class="logo_name">
+            <a>Ranvin</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a class="user_icon px-2" data-bs-toggle="dropdown">
+            <i class="fa fa-user"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
+            <li><a class="dropdown-item"><i class="fa fa-gear"></i> Setting</a></li>
+            <li><a class="dropdown-item"><i class="fa fa-user"></i> Logout</a></li>
+        </ul>
+    </div>
+</nav>
